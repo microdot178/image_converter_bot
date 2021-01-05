@@ -73,7 +73,7 @@ def start(message):
 		
 		bot.register_next_step_handler(message, convert_bmp) #переход к следующей функции - хэндлеру
 
-	elif message.document.mime_type == 'image/ico':
+	elif message.document.mime_type == 'image/vnd.microsoft.icon':
 		keyboard = telebot.types.ReplyKeyboardMarkup(True) #кнопочки выбора формата
 		keyboard.row('jpg', 'png', 'bmp')				   #
 
