@@ -3,7 +3,7 @@ import os
 import random
 from PIL import Image
 
-bot = telebot.TeleBot(' заперто ');
+bot = telebot.TeleBot(' -заперто- ');
 
 print('starting bot...')
 
@@ -219,6 +219,10 @@ def convert_jpeg(message):
 	os.system('rm -r tmp/{}'.format(message.chat.id)) # удаляю временные файлы
 
 if __name__ == '__main__':
-	bot.infinity_polling()
+	
+	try:
+		bot.infinity_polling()
+	except:
+		None
 
 bot.polling(none_stop=True, interval=0)
