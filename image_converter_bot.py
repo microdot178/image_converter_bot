@@ -7,6 +7,11 @@ bot = telebot.TeleBot(' -заперто- ');
 
 print('starting bot...')
 
+@bot.message_handler(content_types=['text', 'photo'])
+
+def promt(message):
+	bot.send_message(message.chat.id, 'please, send me non-compressed image via document')
+
 @bot.message_handler(content_types=['document'])
 
 def start(message):
